@@ -16,7 +16,7 @@ public class ArticleMappers {
 	public static ArticleWithStockDTO mapToDto(Article article, StockDTO stockDTO) {
 
 		ArticleWithStockDTO articleDTO = ArticleWithStockDTO.builder().id(article.getId()).name(article.getName())
-				.size(article.getSize()).stockdto(stockDTO).build();
+				.size(article.getSize()).id_stock(article.getId_stock()).stockdto(stockDTO).build();
 
 		return articleDTO;
 	}

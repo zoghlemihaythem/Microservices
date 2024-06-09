@@ -11,5 +11,7 @@ public interface StockClient {
 	
 	 @GetMapping("/api/getbyid/{id}")
 	    StockDTO getById(@PathVariable("id") String id);
+	 
+	 
 
 }

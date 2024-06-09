@@ -43,7 +43,12 @@ public class ArticleService implements IArticleService {
 	@Override
 	public ArticleWithStockDTO getArticleById(Long id) {
 		Article article = articleRepository.findById(id).get();
+		
+		//OpenFeign
 		StockDTO stockDTO = stockClient.getById(article.getId_stock());
+		
+		//RestTemplate
+		//StockDTO stockDTO =getById(article.getId_stock());
 		return ArticleMappers.mapToDto(article, stockDTO);
 	}
 
@@ -75,6 +80,12 @@ public class ArticleService implements IArticleService {
 	public void deleteArticleById(Long id) {
 		articleRepository.deleteById(id);
 
+	}
+
+	public StockDTO getById(String id) {
+		String url = "http://localhost:8090/api/getbyid/" + id;
+		RestTemplate restTemplate = new RestTemplate();
+		return restTemplate.getForObject(url, StockDTO.class);
 	}
 
 }
