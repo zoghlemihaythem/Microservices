@@ -18,12 +18,12 @@ import com.esprit.secondapp.repository.StockRepository;
 import com.esprit.secondapp.services.IStockService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/stock")
 public class StockController {
 	@Autowired
 	private IStockService iStockService;
 	
-	 @GetMapping("/stocks")
+	 @GetMapping("/getAll")
 	  public List<Stock> getAllTutorials() {
 		 return iStockService.getAllStock();
 	    
