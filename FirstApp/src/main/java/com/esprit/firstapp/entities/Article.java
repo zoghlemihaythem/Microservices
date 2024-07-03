@@ -14,56 +14,48 @@ import lombok.ToString;
 
 @Entity
 @Builder
-public class Joueur {
+public class Article {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;
-	private int age;
-	private String id_Equipe;
-
+	private int size;
+	private String id_stock;
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public int getAge() {
-		return age;
+	public int getSize() {
+		return size;
 	}
-
-	public void setAge(int age) {
-		this.age = age;
+	public void setSize(int size) {
+		this.size = size;
 	}
-
-	public String getId_Equipe() {
-		return id_Equipe;
+	public String getId_stock() {
+		return id_stock;
 	}
-
-	public void setId_Equipe(String id_Equipe) {
-		this.id_Equipe = id_Equipe;
+	public void setId_stock(String id_stock) {
+		this.id_stock = id_stock;
 	}
-
-	public Joueur(Long id, String name, int age, String id_Equipe) {
+	public Article(Long id, String name, int size, String id_stock) {
 		this.id = id;
 		this.name = name;
-		this.age = age;
-		this.id_Equipe = id_Equipe;
+		this.size = size;
+		this.id_stock = id_stock;
 	}
-
-	public Joueur() {
+	public Article() {
 	}
+	
+	
 
 }

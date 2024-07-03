@@ -13,45 +13,45 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.esprit.firstapp.entities.Joueur;
-import com.esprit.firstapp.entities.JoueurWithEquipeDTO;
-import com.esprit.firstapp.services.IJoueurService;
-import com.esprit.firstapp.services.EquipeClient;
+import com.esprit.firstapp.entities.Article;
+import com.esprit.firstapp.entities.ArticleWithStockDTO;
+import com.esprit.firstapp.services.IArticleService;
+import com.esprit.firstapp.services.StockClient;
 
 @RestController
-@RequestMapping("/api/Joueur")
+@RequestMapping("/api/Article")
 
-public class JoueurController {
+public class ArticleController {
 
 	@Autowired
-	private IJoueurService joueurService;
+	private IArticleService articleService;
 
 	@GetMapping("/articles")
-	public List<JoueurWithEquipeDTO> getAllTutorials() {
-		return joueurService.getAllJoueur();
+	public List<ArticleWithStockDTO> getAllTutorials() {
+		return articleService.getAllArticle();
 
 	}
 
 	@PostMapping("/save")
-	public JoueurWithEquipeDTO save(@RequestBody JoueurWithEquipeDTO joueur) {
-		return joueurService.addJoueur(joueur);
+	public ArticleWithStockDTO save(@RequestBody ArticleWithStockDTO article) {
+		return articleService.addArticle(article);
 
 	}
 
 	@DeleteMapping("/delete/{id}")
 	public void supprimer(@PathVariable("id") Long id) {
-		joueurService.deleteJoueurById(id);
+		articleService.deleteArticleById(id);
 
 	}
 
 	@GetMapping("/getbyid/{id}")
-	public JoueurWithEquipeDTO GetById(@PathVariable("id") Long id) {
-		return joueurService.getJoueurById(id);
+	public ArticleWithStockDTO GetById(@PathVariable("id") Long id) {
+		return articleService.getArticleById(id);
 	}
 
 	@PatchMapping("/update/{id}")
-	public Joueur patchUpdateStock(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
-		return joueurService.updateJoueur(id, updates);
+	public Article patchUpdateStock(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+		return articleService.updateArticle(id, updates);
 
 	}
 

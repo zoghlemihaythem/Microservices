@@ -1,6 +1,6 @@
 package com.esprit.firstapp.entities;
 
-public class EquipeDTO {
+public class StockDTO {
 	
 	
 	private String id;
@@ -23,11 +23,11 @@ public class EquipeDTO {
 		this.name = name;
 	}
 
-	public EquipeDTO(String id, String name) {
+	public StockDTO(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	public EquipeDTO() {
+	public StockDTO() {
 
 	}
 

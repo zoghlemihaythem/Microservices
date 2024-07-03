@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection="Stock")
-public class Equipe {
+public class Stock {
 	
 	@Id
 	private String id ;
@@ -30,12 +30,12 @@ public class Equipe {
 		this.name = name;
 	}
 
-	public Equipe(String id, String name) {
+	public Stock(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-	public Equipe() {
+	public Stock() {
 	}
 
 	
