@@ -8,9 +8,9 @@ import com.esprit.firstapp.entities.JoueurWithEquipeDTO;
 
 public interface IJoueurService {
 	
-	JoueurWithEquipeDTO addJoueur(JoueurWithEquipeDTO joueur);
+	JoueurWithEquipeDTO addJoueur(JoueurWithEquipeDTO article);
 
-	Joueur updateJoueur(Long id, Map<String, Object> joueur);
+	Joueur updateJoueur(Long id, Map<String, Object> article);
 
 	List<JoueurWithEquipeDTO> getAllJoueur();
 
